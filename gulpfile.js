@@ -1,7 +1,9 @@
+'use strict';
+
 const gulp = require("gulp");
 const plumber = require('gulp-plumber');
 const sourcemap = require('gulp-sourcemaps');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const sync = require('browser-sync').create();
@@ -18,17 +20,24 @@ const styles = () => {
     .pipe(gulp.dest('source/css')) // результат обработанного кода сохраняется
     .pipe(sync.stream()); // обновляет изменения с запущенным локальным сервером
 };
+
+exports.styles = styles;
+
 // запуск локального сервера и открытие проекта в браузере
-const server = () => {
+const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'source'
+      baseDir: "source",
     },
     cors: true,
     notify: false,
     ui: false,
   });
+  done();
 };
+
+exports.server = server;
+
 // слежка за изменением файлов HTML и стилей
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series('styles'));

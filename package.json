@@ -1,0 +1,52 @@
+{
+  "name": "academy-gulp-20",
+  "version": "1.0.0",
+  "description": "Gulp package, that is recommended from HTML Academy's course.",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alienat3d/borodinsky-v2.git"
+  },
+  "author": "Al Tsaplin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alienat3d/borodinsky-v2/issues"
+  },
+  "homepage": "https://github.com/alienat3d/borodinsky-v2#readme",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.1",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.62.0",
+    "stylelint": "^15.5.0",
+    "stylelint-config-htmlacademy": "^1.1.4"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint 'source/sass/**/*.scss' --config sass",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp style",
+    "start": "gulp serve"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/sass/**/*.scss",
+    "source/js/**/*.js",
+    "source/img/**/*.svg"
+  ],
+  "engines": {
+    "node": "16.19.1"
+  }
+}
