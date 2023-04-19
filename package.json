@@ -18,17 +18,16 @@
     "autoprefixer": "^10.4.14",
     "browser-sync": "^2.29.1",
     "gulp": "^4.0.2",
+    "gulp-less": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
-    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.62.0",
     "stylelint": "^15.5.0",
     "stylelint-config-htmlacademy": "^1.1.4"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --config sass",
+    "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp styles",
     "start": "gulp"
@@ -42,7 +41,7 @@
     "*.json",
     "*.js",
     "source/*.html",
-    "source/sass/**/*.scss",
+    "source/less/**/*.less",
     "source/js/**/*.js",
     "source/img/**/*.svg"
   ],
