@@ -1,4 +1,27 @@
+.main-nav {
+  position: relative;
+  width: auto;
+  min-height: 51px;
+  background-color: #826550;
+}
+
 .main-nav__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 70px;
+  height: 50px;
+  background-color: #6a4d38;
+  cursor: pointer;
+  border: none;
+
+  &:hover,
+  &:active {
+    background-color: #624530;
+  }
+
   @media (min-width: @tablet-width) {
     display: none;
   }
