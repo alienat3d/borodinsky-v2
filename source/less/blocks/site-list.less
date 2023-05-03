@@ -1,9 +1,128 @@
 .site-list {
+  font-weight: bold;
+
   @media (min-width: @tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     width: 570px;
+    flex-grow: 1;
   }
 
   @media (min-width: @desktop-width) {
     width: 780px;
+  }
+}
+
+.site-list__item {
+  @media (min-width: @tablet-width) {
+    margin-right: 32px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: #826550;
+      }
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-right: 0;
+
+    &--active::after {
+      right: 30px;
+      left: 30px;
+    }
+  }
+}
+.site-list__item a[href] {
+  @media (min-width: @tablet-width) {
+    &:hover {
+      color: #826550;
+      background-color: #000000;
+    }
+
+    &:active {
+      color: #ffffff;
+      background-color: #000000;
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &:hover {
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.3);
+      background-color: #ffffff;
+      opacity: 1;
+    }
+  }
+}
+.main-nav--closed .site-list__item {
+  @media (max-width: @mobile-width-only) {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+
+    &--active a {
+      padding-right: 70px;
+      padding-left: 70px;
+      text-align: center;
+    }
+  }
+}
+.main-nav--nojs .site-list__item {
+  display: block;
+
+  &--active a {
+    padding-right: 21px;
+    padding-left: 21px;
+    text-align: left;
+  }
+}
+
+.site-list a {
+  position: relative;
+  display: block;
+  padding: 12px 21px;
+  padding-bottom: 13px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #826550;
+  border-top: 1px solid #886e5b;
+  border-bottom: 1px solid #71543f;
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+    padding-top: 25px;
+    padding-bottom: 23px;
+
+    background: none;
+    border: none;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-right: 31px;
+    padding-left: 31px;
   }
 }
