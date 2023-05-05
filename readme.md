@@ -6,7 +6,3 @@
 
 **Project’s topic: `Barbershop`**
 **Project’s type: `Landing`**
-
-Полезный файл:
-
-- [Contributing.md](Contributing.md) — руководство по внесению изменений.
